@@ -20,7 +20,6 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/products" element={<Product />} />
             <Route path="/products/:productId" element={<SingleProduct />} />
-            <Route path="/posts" element={<Posts />} />
             <Route path="*" element={<Error />} />
           </Route>
         </Routes>
