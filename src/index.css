@@ -25,3 +25,23 @@ a {
 .active {
   color: red;
 }
+
+.login-form {
+  margin: 20px 0;
+}
+
+.login-form div {
+  padding-bottom: 15px;
+}
+
+.posts-container {
+  margin: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+}
+
+.post {
+  border: 1px solid #999;
+  padding: 15px;
+}

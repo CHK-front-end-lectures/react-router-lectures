@@ -19,6 +19,15 @@ const Navbar = () => {
       >
         Products
       </NavLink>
+
+      <NavLink
+        to="/dashboard"
+        style={({ isActive }) => {
+          return { color: isActive ? 'red' : 'black' };
+        }}
+      >
+        Dashboard
+      </NavLink>
     </nav>
   );
 };
