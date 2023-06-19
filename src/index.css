@@ -45,3 +45,29 @@ a {
   border: 1px solid #999;
   padding: 15px;
 }
+
+.form-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.add-post-form {
+  max-width: 640px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+input,
+textarea {
+  padding: 10px 15px;
+}
+
+button {
+  padding: 10px 15px;
+}
