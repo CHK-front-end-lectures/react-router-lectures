@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const AddPost = (props) => {
   const [title, setTitle] = useState('');
@@ -6,10 +6,21 @@ const AddPost = (props) => {
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
-    props.addPost(title, body);
+    if (props.post) { // null
+      props.editPost(title, body);
+    } else {
+      props.addPost(title, body);
+    }
     setTitle('');
     setBody('');
   };
+
+  useEffect(() => {
+    if (props.post) {
+      setTitle(props.post.title);
+      setBody(props.post.body);
+    }
+  }, [props.post]);
 
   return (
     <div className="form-wrapper">
