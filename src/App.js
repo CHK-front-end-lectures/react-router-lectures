@@ -11,6 +11,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import ProtectedRoute from './pages/ProtectedRoute';
 import Posts from './pages/Posts';
+import Form from './useReducer/Form';
 
 // nested routes
 
@@ -37,6 +38,7 @@ function App() {
               }
             />
             <Route path="/posts" element={<Posts />} />
+            <Route path="/reducer" element={<Form />} />
             <Route path="*" element={<Error />} />
           </Route>
         </Routes>
