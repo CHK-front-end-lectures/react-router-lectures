@@ -71,3 +71,9 @@ textarea {
 button {
   padding: 10px 15px;
 }
+
+.task {
+  display: flex;
+  grid-gap: 25px;
+  align-items: center;
+}
