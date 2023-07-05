@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Product from './pages/Product';
@@ -14,6 +14,9 @@ import Posts from './pages/Posts';
 import Form from './useReducer/Form';
 import PostsReducer from './useReducer/PostsReducer';
 import TasksApp from './useReducer/tasks/TasksApp';
+import ParentComponent from './context/ParentComponent';
+import { UsersContext } from './context/context';
+import ThemeApp from './context/theme/ThemeApp';
 
 // nested routes
 
@@ -23,30 +26,34 @@ function App() {
   const [user, setUser] = useState(null);
   return (
     <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<SharedLayout />}>
-            <Route index element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/products" element={<Product />} />
-            <Route path="/products/:productId" element={<SingleProduct />} />
-            <Route path="/login" element={<Login setUser={setUser} />} />
-            <Route
-              path="/dashboard"
-              element={
-                <ProtectedRoute user={user}>
-                  <Dashboard user={user} />
-                </ProtectedRoute>
-              }
-            />
-            <Route path="/posts" element={<Posts />} />
-            <Route path="/reducer" element={<Form />} />
-            <Route path="/reducer/posts" element={<PostsReducer />} />
-            <Route path="/reducer/tasks" element={<TasksApp />} />
-            <Route path="*" element={<Error />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <UsersContext.Provider value={{ user: 'Egzon' }}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<SharedLayout />}>
+              <Route index element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/products" element={<Product />} />
+              <Route path="/products/:productId" element={<SingleProduct />} />
+              <Route path="/login" element={<Login setUser={setUser} />} />
+              <Route
+                path="/dashboard"
+                element={
+                  <ProtectedRoute user={user}>
+                    <Dashboard user={user} />
+                  </ProtectedRoute>
+                }
+              />
+              <Route path="/posts" element={<Posts />} />
+              <Route path="/reducer" element={<Form />} />
+              <Route path="/reducer/posts" element={<PostsReducer />} />
+              <Route path="/reducer/tasks" element={<TasksApp />} />
+              <Route path="/prop-drilling" element={<ParentComponent />} />
+              <Route path="/context/theme" element={<ThemeApp />} />
+              <Route path="*" element={<Error />} />
+            </Route>
+          </Routes>
+        </Router>
+      </UsersContext.Provider>
     </div>
   );
 }

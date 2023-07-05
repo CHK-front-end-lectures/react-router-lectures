@@ -1,7 +1,9 @@
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { UsersContext } from '../context/context';
 
 const Login = ({ setUser }) => {
+  const value = useContext(UsersContext);
   const navigate = useNavigate();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -10,7 +12,7 @@ const Login = ({ setUser }) => {
     evt.preventDefault();
     if (!email || !name) return;
     setUser({ name, email });
-    navigate('/dashboard')
+    navigate('/dashboard');
   };
 
   return (
@@ -38,6 +40,7 @@ const Login = ({ setUser }) => {
         <div>
           <button type="submit">Submit</button>
         </div>
+        <div>{value.user}</div>
       </form>
     </>
   );

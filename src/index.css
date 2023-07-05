@@ -77,3 +77,19 @@ button {
   grid-gap: 25px;
   align-items: center;
 }
+
+.bg-white {
+  background: white;
+}
+
+.bg-black {
+  background: black;
+}
+
+.text-white {
+  color: white;
+}
+
+.text-black {
+  color: black;
+}
