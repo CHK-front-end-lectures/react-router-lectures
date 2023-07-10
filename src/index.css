@@ -93,3 +93,34 @@ button {
 .text-black {
   color: black;
 }
+
+/* .green {
+  color: green;
+}
+
+.red {
+  color: red;
+} */
+
+.online-status {
+  display: flex;
+  grid-gap: 8px;
+  align-items: center;
+  padding-left: 20px;
+  height: 150vh;
+}
+
+.circle-green {
+  background: green;
+}
+
+.circle-red {
+  background: red;
+}
+
+.circle {
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}

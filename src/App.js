@@ -14,9 +14,11 @@ import Posts from './pages/Posts';
 import Form from './useReducer/Form';
 import PostsReducer from './useReducer/PostsReducer';
 import TasksApp from './useReducer/tasks/TasksApp';
+import TasksAppContext from './context/tasks/TasksApp';
 import ParentComponent from './context/ParentComponent';
 import { UsersContext } from './context/context';
 import ThemeApp from './context/theme/ThemeApp';
+import CustomHook from './pages/CustomHook';
 
 // nested routes
 
@@ -49,6 +51,8 @@ function App() {
               <Route path="/reducer/tasks" element={<TasksApp />} />
               <Route path="/prop-drilling" element={<ParentComponent />} />
               <Route path="/context/theme" element={<ThemeApp />} />
+              <Route path="/context/tasks" element={<TasksAppContext />} />
+              <Route path="/custom-hook" element={<CustomHook />} />
               <Route path="*" element={<Error />} />
             </Route>
           </Routes>
